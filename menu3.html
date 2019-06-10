@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>자취생의 요리백과</title>
+	<!--Css&Js-->
+	<link rel="stylesheet" type="text/css" href="include/style.css">
+	<script type="text/javascript" src="include/function.js"></script>
+	<link href="include/foodicon.ico" rel="shortcut icon">
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nova+Square" rel="stylesheet">
+</head>
+<body>
+	<!--Header-->
+	<header class="header">
+		<section class="logo">
+			<section class="title"><a href="home.html">자취생의 요리백과</a></section>
+			<section class="subMenu">
+				<div class="subMenuList"><a href="home.html">홈</a></div>
+				<div class="subMenuList"><a href="#" onClick="unknown()">로그인</a></div>
+				<div class="subMenuList"><a href="javascript:bookmarksite('자취생의 요리백과','http://127.0.0.1:3000/home.html')">즐겨찾기</a></div>
+			</section>
+		</section>
+		<!-- Mainmenu -->
+		<section class="menu">
+			<div class="menuList"><a href="menu1.html">오늘의 레시피</a></div>
+			<div class="menuList"><a href="menu2.html">오늘의 맛집</a></div>
+			<div class="menuList"><a href="menu3.html">이상형 월드컵</a></div>
+			<div class="menuList"><a href="menu4.html">공지사항</a></div>
+			<div class="menuList"><a href="menu5.html">커뮤니티</a></div>
+		</section>
+	</header>
+	<!--Main-->
+	<section class="main">
+        <section class="worldcup">
+            <h1 id="vs"></h1>
+            <input type="image" id="food1" src="" onclick="choice(1)" style="width:500px; height:400px; float:left;border:none"/>
+            <input type="image" id="food2" src="" onclick="choice(2)" style="width:500px; height:400px; border:none"/>
+        </section>
+     <script>
+         var i = 0;
+         var tmp = [];
+         var food = [
+             "족발",
+             "보쌈",
+             "짜장면",
+             "비빔국수",
+             "두루치기",
+             "라면",
+             "볶음밥",
+             "돈까스",
+             "오므라이스",
+             "파스타",
+             "돼지국밥",
+             "김치찌개",
+             "된장찌개",
+             "삼겹살",
+             "냉면",
+             "치킨"
+         ];
+
+         function shuffle() {
+             food.sort(function (a, b) {return 0.5-Math.random()})
+         }
+
+         function check() {
+             if(food.length == 1) {
+                 document.getElementById("vs").innerHTML = food+"이(가) 당신이 선택한 요리!";
+                 document.getElementById("food1").src = food+".jpg";
+                 document.getElementById("food2").style.display = "none";
+                 return;
+             }
+             i = 0;
+             copy();
+         }
+
+         function copy() {
+             var cpy = [];
+             for(var i = 0; i<food.length; i++)
+                 cpy[i] = food[i];
+             compete(cpy);
+         }
+
+         function choice(num) {
+             if(num == 1)
+                 tmp[i+1] = "fail";
+             else if(num == 2)
+                 tmp[i] = "fail";
+             food = tmp;
+
+             if(food.length == i+2) {
+                 deleteFails();
+                 check();
+             }else{
+                 i+=2;
+                 copy();
+             }
+         }
+
+         function deleteFails() {
+             alert(food);
+             var num = food.length;
+             for(var i = num-1 ; i>=0; i--)
+                 if(food[i] == "fail")
+                     food.splice(i, 1);
+             alert(food);
+         }
+
+         function compete(cpy) {
+
+             var numOfCmpt;
+             if(cpy.length > 8)
+                 numOfCmpt = 16 + "강전 ";
+             else if(cpy.length <= 8 && cpy.length > 4)
+                 numOfCmpt = 8 + "강전 ";
+             else if(cpy.length == 4)
+                 numOfCmpt = "준결승전 ";
+             else if(cpy.length == 2)
+                 numOfCmpt = "결승전 ";
+
+             document.getElementById("vs").innerHTML = numOfCmpt + food[i] + " vs " + food[i+1];
+             document.getElementById("food1").src = food[i]+".jpg";
+             document.getElementById("food2").src = food[i+1]+".jpg";
+
+             tmp = cpy;
+         }
+
+         function init() {
+             shuffle();
+             copy();
+         }
+
+         window.onload = init();
+     </script>
+
+	</section>
+	<!--Footer-->
+	<footer class="footer">
+		<section class="production">
+			<div class="director">제 작 자 : 김동균, 김동현, 조상웅, 이도경</div>
+			<div class="place">주 &nbsp;&nbsp;&nbsp;  소 : UIT - 108</div>
+			<div class="phone">광고문의 : 010 - 0000- 0000</div>
+		</section>
+	</footer>
+	<!--20152535 김동균-->
+</body>
+</html>
