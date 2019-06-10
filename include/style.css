@@ -1,0 +1,292 @@
+/*───────────────────────────────────Order───────────────────────────────────!!*/
+		/*
+
+		top > bottom > left > right
+
+		float > border
+
+		width > height
+
+		margin > padding
+
+		text > font
+
+		color > line
+
+		*/
+		*
+		{
+			box-sizing: border-box;
+			font: normal 10pt 'Jua', sans-serif;
+			color: #747474;
+		}
+		body
+		{
+			margin: 0px;
+			background-color: #FFFFFF;
+		}
+		.header
+		{
+			width: 1000px;
+			height: 250px;
+			background-color: #FFFFFF;
+			margin: 0px auto;
+		}
+		.logo
+		{
+			float: left;
+			width: 1000px;
+			height: 200px;
+			margin: 20px auto;
+			background-color: #FFFFFF;
+		}
+		/*.title
+		{
+			float: left;
+			width: 800px;
+			text-align: left;
+			font-size: 60px;
+			line-height: 200px;
+		}*/
+		.title a
+		{
+			float: left;
+			width: 800px;
+			text-align: left;
+			text-decoration: none;
+			font-size: 60px;
+			line-height: 200px;
+		}
+		/* 메인타이틀은 다른것으로 설정 */
+		.maintitle a
+		{
+			float: left;
+			width: 800px;
+			text-align: left;
+			text-decoration: none;
+			font-size: 60px;
+			line-height: 200px;
+			padding-left: 300px;
+		}
+		.maintitle a:hover
+		{
+			font-size: 65px;
+			text-shadow: 0px 6px #ffffff, 8px 8px 0px #dad7d7;
+		}
+		.title a:hover
+		{	font-size: 65px;
+			text-shadow: 0px 6px #ffffff, 8px 8px 0px #dad7d7;
+		}
+		.subMenu
+		{
+			width: 150px;
+			height: 20px;
+			float: right;
+		}
+		.subMenuList
+		{
+			float: left;
+			width: 50px;
+			height: 20px;
+			text-align: center;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.subMenuList a
+		{
+			float: left;
+			width: 50px;
+			height: 20px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.menu
+		{
+			height: 50px;
+			background-color: #FFFFFF;
+		}
+		.menuList
+		{
+			float: left;
+			width: 200px;
+			height: 50px;
+			text-align: center;
+			font-size: 18px;
+			line-height: 50px;
+			background-color: #F5F0F0;
+		}
+		.menuList a
+		{
+			text-decoration: none;
+			font-size: 18px;
+		}
+		.menuList a:hover
+		{
+			font-size: 25px;
+			color: #FB7B0B;
+		}
+		.main
+		{
+			width: 1000px;
+			height: 700px;
+			margin: 60px auto;
+			background-color: #FFFFFF;
+		}
+		.worldcup
+		{
+			text-align: center;
+		}
+		.foodname
+		{
+			text-align: center;
+			margin: 90px auto;
+			font-size: 40px;
+		}
+		.bodyfont
+		{
+			margin: 30px auto;
+			font-size: 30px;
+		}
+		.smallfont
+		{
+			font-size: 18px;
+		}
+		.middlefont
+		{
+			font-size:  19px;
+		}
+		.img
+		{
+			width: 1000px;
+			height: 700px;
+		}
+		/* 자유게시판 */
+	/*	.article
+		{
+			float: left;
+			width: 800px;
+			height: 700px;
+		}
+		.Ctitle
+		{
+			border-bottom: 1px solid #DEE3EB;
+			width: 100%;
+			height: 122px;
+		}
+		.title div
+		{
+			width: 416px;
+			height: 100%;
+			padding-left: 30px;
+			font: normal 18pt 'Jua', sans-serif;
+			color: #47C83E;
+			line-height: 117px;
+		}
+		.board
+		{
+			width: 800px;
+			height: 700px;
+		}
+		.board header
+		{
+			border-bottom: 1px solid #DEE3EB;
+			width: 100%;
+			height: 40px;
+			padding-left: 0px;
+		}
+		.boardNumber, .boardTitle, .boardWriter, .boardDate, .boardHits
+		{
+			float: left;
+			text-align: center;
+			font: normal 12pt 'Jua', sans-serif;
+			line-height: 35px;
+		}
+		/* 여기까지 실험용 자유게시판입니다. 오류가많음. */
+		/* 게시판형식 */
+		.sub_news,.sub_news th,.sub_news td
+		{
+			border:0;
+			margin: 60px auto;
+		}
+		.sub_news a
+		{
+			color:#383838;
+			text-decoration:none;
+		}
+		.sub_news
+		{
+			width:100%;
+			border-bottom:1px solid #999;
+			color:#666;
+			font-size:12px;
+			table-layout:fixed;
+		}
+		.sub_news caption
+		{
+			display:none;
+		}
+		.sub_news th
+		{
+			padding:12px 0 10px;
+			border-top:solid 1px #999;
+			border-bottom:solid 1px #b2b2b2;
+			background-color:#f1f1f4;
+			color:#333;
+			font-weight:bold;
+			line-height:20px;
+			vertical-align:top;
+		}
+		.sub_news td
+		{
+			padding:15px 0 15px;
+			border-bottom:solid 1px #d2d2d2;
+			text-align:center;
+			line-height:18px;
+		}
+		.sub_news .date,.sub_news .hit
+		{
+			padding:0;
+			font-family:Tahoma;
+			font-size:15px;
+			line-height:normal;
+		}
+		.sub_news .Atitle
+		{
+			text-align:center;
+			padding-left:15px;
+			font-size:13px;
+		}
+		.sub_news .Atitle .pic,.sub_news .Atitle .new
+		{
+			margin:0 0 2px;
+			vertical-align:middle;
+		}
+		.sub_news .Atitle a.comment
+		{
+			padding:0;
+			background:none;
+			color:#f00;
+			font-size:12px;
+			font-weight:bold;
+		}
+		.name, .data, .boardHits
+		{
+			font-size: 17px;
+		}
+		.footer
+		{
+			width: 1000px;
+			height: 100px;
+			margin: 0px auto;
+			background-color: #FFFFFF;
+		}
+		.production
+		{
+			float: right;
+			width: 300px;
+			height: 100px;
+			text-align: left;
+			line-height: 100px;
+		}
